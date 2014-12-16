@@ -1,1 +1,1 @@
-from mcache.mcache import *
+from .mcache.mcache import cache
