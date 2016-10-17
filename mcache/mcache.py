@@ -6,19 +6,19 @@
 # wrapper for joblib Memory cache function
 
 
-import sys
 import errno
-import os
 import inspect
+import os
+import sys
 import warnings
 
+from functools import wraps
 from joblib import Memory
 
 # TODO:
 # - save in __pycache__ folder instead of .mcache?
 # - make a .mcache folder for every folder instead of a root?
 #   could be easier to use; harder to get rid of
-
 
 def cache(verbose=2):
     """replacement for Memory.cache function with automatic folder 
@@ -44,6 +44,7 @@ def cache(verbose=2):
 
     # initiate Memory class
     memory = Memory(cachedir=mcache_folder, verbose=verbose)
+
 
     # return the decorator function
     return memory.cache
@@ -131,7 +132,7 @@ def parse_cmdline(argv):
 
 
 def makedir(path, ask=False):
-    """createse a directory if it does not exist"""
+    """creates a directory if it does not exist"""
     if ask and not os.path.isdir(path):  # ask for permission
         ans = raw_input("directory '%s' does not exist.\nDo you want to create\
             it? [N/y]: " % path)
@@ -144,12 +145,14 @@ def makedir(path, ask=False):
         if exception.errno != errno.EEXIST:
             raise
 
+@cache()
+def test_function(x):
+    """test function"""
+    return x
 
 def test():
-
-    @cache()
-    def test_function(x):
-        return x
+    """test"""
+    
 
     print(test_function(5))
     print(test_function(6))
