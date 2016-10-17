@@ -8,13 +8,7 @@ setup(name='mcache',
     author_email='mathias.hauser@env.ethz.ch',
     license='MIT',
     packages=['mcache'],
-    install_requires=[
-        'sys',
-		'errno',
-		'os',
-		'inspect',
-		'warnings'
-		],
+    install_requires=[],
     zip_safe=False)
 
 
