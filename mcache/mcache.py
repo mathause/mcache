@@ -145,18 +145,18 @@ def makedir(path, ask=False):
         if exception.errno != errno.EEXIST:
             raise
 
-@cache()
-def test_function(x):
-    """test function"""
-    return x
+# @cache()
+# def test_function(x):
+#     """test function"""
+#     return x
 
-def test():
-    """test"""
+# def test():
+#     """test"""
     
 
-    print(test_function(5))
-    print(test_function(6))
-    print(test_function(5))
+#     print(test_function(5))
+#     print(test_function(6))
+#     print(test_function(5))
 
 
 if __name__ == '__main__':
