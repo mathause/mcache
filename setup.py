@@ -8,7 +8,7 @@ setup(name='mcache',
     author_email='mathias.hauser@env.ethz.ch',
     license='MIT',
     packages=['mcache'],
-    install_requires=[],
+    install_requires=['joblib'],
     zip_safe=False)
 
 
