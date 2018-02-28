@@ -1,7 +1,7 @@
 # mcache
 wrapper for joblib's Memory
 
- * version 0.1.0
+ * version 0.1.1
 
 ## Installation
 
